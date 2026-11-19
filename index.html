@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité | Application mobile Kleer</title>
+<meta name="description" content="Politique de confidentialité de l'application mobile Kleer : données traitées, finalités, durées de conservation et droits des personnes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --navy: #1E2548;
+    --navy-deep: #141B3D;
+    --action: #3B5BA5;
+    --ink: #020A2E;
+    --muted: #5B627A;
+    --surface: #F4F6FB;
+    --line: #E8EBF3;
+    --bg: #FFFFFF;
+    --dot: #C4161C;
+      }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  a { color: var(--action); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--action); outline-offset: 3px; border-radius: 4px; }
+
+  /* Langue : un seul bloc visible à la fois */
+  html[lang="fr"] [lang="en"], html[lang="en"] [lang="fr"] { display: none; }
+
+  /* En-tête, comme sur kleer-ai.com : logo à gauche, navigation à droite */
+  .topbar { background: var(--navy); }
+  .topbar-inner {
+    max-width: 1100px; margin: 0 auto; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .logo { height: 40px; width: auto; display: block; }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 15px; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+  .nav a:hover { border-bottom-color: #fff; }
+  .lang { display: flex; gap: 4px; margin-left: 8px; }
+  .lang button {
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+    background: transparent; color: rgba(255,255,255,.72);
+    border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 4px 12px;
+  }
+  .lang button[aria-pressed="true"] { background: #fff; color: var(--navy); border-color: #fff; }
+
+  /* Bandeau de titre */
+  .hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; padding: 56px 24px 64px; }
+  .hero h1 {
+    margin: 0; font-weight: 700; font-size: clamp(30px, 5vw, 48px); line-height: 1.15;
+    letter-spacing: -0.01em; max-width: 18ch; text-wrap: balance;
+  }
+  .hero h1 .dot { color: var(--dot); }
+  .hero p { margin: 18px 0 0; color: rgba(255,255,255,.78); font-size: 17px; max-width: 60ch; }
+  .meta { margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip { font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); }
+
+  /* Corps */
+  .layout { max-width: 1100px; margin: 0 auto; padding: 48px 24px 72px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; }
+  .toc { position: sticky; top: 24px; align-self: start; font-size: 14px; }
+  .toc h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .toc a { display: block; padding: 6px 12px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; line-height: 1.4; }
+  .toc a:hover { color: var(--navy); border-left-color: var(--action); }
+  main { min-width: 0; max-width: 760px; }
+  main h2 { font-size: 24px; line-height: 1.3; font-weight: 700; color: var(--navy); margin: 48px 0 12px; text-wrap: balance; scroll-margin-top: 24px; }
+  main h2:first-of-type { margin-top: 0; }
+  main p { margin: 0 0 14px; }
+  main ul { margin: 0 0 14px; padding-left: 22px; }
+  main li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  .callout { background: var(--surface); border-left: 3px solid var(--action); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 0 0 18px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 0 0 18px; border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 560px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--surface); font-weight: 600; color: var(--navy); font-size: 13px; }
+  tr:last-child td { border-bottom: 0; }
+
+  /* Pied de page */
+  footer { background: var(--navy); color: rgba(255,255,255,.78); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; padding: 36px 24px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 14px; }
+  footer strong { color: #fff; display: block; margin-bottom: 4px; }
+  footer a { color: #fff; }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 28px; padding-top: 32px; }
+    .toc { position: static; }
+    .toc ol { grid-template-columns: 1fr 1fr; gap: 4px 12px; }
+  }
+  @media (max-width: 560px) {
+    .nav { gap: 16px; }
+    .toc ol { grid-template-columns: 1fr; }
+    .hero-inner { padding: 40px 20px 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media print { .topbar, .toc, .lang { display: none; } .hero { background: none; color: var(--ink); } .hero p, .chip { color: var(--ink); border-color: var(--line); } .layout { display: block; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="https://kleer-ai.com" aria-label="Kleer AI"><img class="logo" src="data:image/png;base64,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" alt="Kleer AI" width="105" height="40"></a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="https://kleer-ai.com"><span lang="fr">Accueil</span><span lang="en">Home</span></a>
+      <a href="https://kleer-ai.com/contact">Contact</a>
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-set-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>
+      <span lang="fr">Politique de confidentialité<span class="dot">.</span></span>
+      <span lang="en">Privacy policy<span class="dot">.</span></span>
+    </h1>
+    <p>
+      <span lang="fr">Application mobile Kleer : quelles données sont traitées, pourquoi, pendant combien de temps, et comment exercer vos droits.</span>
+      <span lang="en">Kleer mobile app: what data is processed, why, for how long, and how to exercise your rights.</span>
+    </p>
+    <div class="meta">
+      <span class="chip"><span lang="fr">Version 1.0</span><span lang="en">Version 1.0</span></span>
+      <span class="chip"><span lang="fr">Mise à jour le 19 novembre 2026</span><span lang="en">Last updated 19 November 2026</span></span>
+      <span class="chip"><span lang="fr">iPhone</span><span lang="en">iPhone</span></span>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+  <!-- ============================== FRANÇAIS ============================== -->
+  <aside class="toc" lang="fr">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#fr-qui">Qui est responsable de quoi</a></li>
+      <li><a href="#fr-donnees">Les données traitées</a></li>
+      <li><a href="#fr-finalites">Pourquoi nous les utilisons</a></li>
+      <li><a href="#fr-hebergement">Hébergement et sécurité</a></li>
+      <li><a href="#fr-duree">Durées de conservation</a></li>
+      <li><a href="#fr-destinataires">Qui reçoit les données</a></li>
+      <li><a href="#fr-appareil">Votre iPhone</a></li>
+      <li><a href="#fr-droits">Vos droits</a></li>
+      <li><a href="#fr-contact">Contact et réclamation</a></li>
+    </ol>
+  </aside>
+
+  <main lang="fr">
+    <h2 id="fr-qui">Qui est responsable de quoi</h2>
+    <p>L'application mobile Kleer est éditée par <strong>Kleer Technologies SAS</strong>, 33 bis avenue George V, 35800 Dinard (France), RCS Saint-Malo 918 321 787. Elle permet à un collaborateur d'une entreprise cliente de Kleer (l'« Utilisateur ») de vérifier, depuis un iPhone, l'identité d'une personne (la « Personne Contrôlée ») et de mener un premier niveau de vigilance : sanctions, personnes politiquement exposées (PEP) et réputation. Ce contrôle répond aux obligations de lutte contre le blanchiment de capitaux et le financement du terrorisme (LCB-FT) de l'entreprise cliente.</p>
+    <div class="callout">
+      <p><strong>Données de la Personne Contrôlée :</strong> l'entreprise cliente de Kleer est responsable du traitement. Kleer agit comme sous-traitant, sur ses instructions.</p>
+      <p><strong>Données du compte de l'Utilisateur et données techniques de l'application :</strong> Kleer est responsable du traitement.</p>
+    </div>
+
+    <h2 id="fr-donnees">Les données traitées</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Données</th><th>Personne concernée</th><th>Utilité</th></tr></thead>
+        <tbody>
+          <tr><td>Adresse e-mail, nom d'affichage, identifiant de compte</td><td>Utilisateur</td><td>Connexion et sécurité du compte</td></tr>
+          <tr><td>Nom, prénoms, date de naissance, pays de résidence</td><td>Personne Contrôlée</td><td>Contrôle d'identité et criblage</td></tr>
+          <tr><td>Nationalité, sexe, numéro et date d'expiration du document, État émetteur, <strong>image de la pièce d'identité</strong></td><td>Personne Contrôlée</td><td>Vérification de la pièce (lecture, authenticité, concordance avec la saisie)</td></tr>
+          <tr><td>Nature et fréquence de la relation avec le client</td><td>Personne Contrôlée</td><td>Qualifier le dossier et le niveau de vigilance</td></tr>
+          <tr><td>Résultats du criblage (sanctions, PEP) et de l'analyse de réputation (presse), statuts de qualification et justification saisie par l'Utilisateur</td><td>Personne Contrôlée</td><td>Aide à la décision de l'entreprise cliente</td></tr>
+          <tr><td>Langue de l'appareil et données techniques de connexion</td><td>Utilisateur</td><td>Affichage dans la bonne langue, fonctionnement et sécurité du service</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>L'application ne demande que les données nécessaires au contrôle. L'Utilisateur ne doit photographier que la pièce d'identité de la Personne Contrôlée.</p>
+
+    <h2 id="fr-finalites">Pourquoi nous les utilisons</h2>
+    <ul>
+      <li><strong>Vérifier l'identité et mener le premier niveau de vigilance.</strong> Fondement : l'obligation légale de lutte contre le blanchiment et le financement du terrorisme qui pèse sur l'entreprise cliente. Kleer agit pour son compte.</li>
+      <li><strong>Gérer les comptes, authentifier les Utilisateurs et sécuriser le service.</strong> Fondement : l'exécution du contrat entre Kleer et l'entreprise cliente, et l'intérêt légitime de Kleer à protéger son service.</li>
+      <li><strong>Répondre aux demandes de support.</strong> Même fondement.</li>
+    </ul>
+    <p>Les données ne sont ni vendues ni utilisées à des fins publicitaires. Les résultats du contrôle sont produits en partie par des traitements automatisés et d'intelligence artificielle : ils sont une aide à la décision, et aucune décision ne doit être prise sur les seuls résultats, sans validation humaine de l'entreprise cliente.</p>
+
+    <h2 id="fr-hebergement">Hébergement et sécurité</h2>
+    <p>Les données sont transmises de façon chiffrée, puis stockées sur l'infrastructure de Kleer hébergée en <strong>France</strong> et, pour le périmètre monégasque, à <strong>Monaco</strong>. Le service d'authentification (Auth0) est hébergé dans l'Union européenne.</p>
+    <p>Si un prestataire devait traiter des données en dehors de l'Union européenne, ce transfert serait encadré par les garanties prévues par le RGPD, notamment les clauses contractuelles types.</p>
+
+    <h2 id="fr-duree">Durées de conservation</h2>
+    <ul>
+      <li><strong>Dossier de la Personne Contrôlée :</strong> selon la durée fixée par l'entreprise cliente. En principe, 5 ans après la fin de la relation d'affaires.</li>
+      <li><strong>Dossier créé depuis l'application puis abandonné :</strong> un dossier non finalisé est anonymisé automatiquement au bout de 24 heures.</li>
+      <li><strong>Compte de l'Utilisateur :</strong> pendant la durée du contrat entre Kleer et l'entreprise cliente, puis supprimé ou anonymisé.</li>
+      <li><strong>Sur l'iPhone :</strong> l'application ne conserve aucune donnée de contrôle (voir « Votre iPhone »).</li>
+    </ul>
+
+    <h2 id="fr-destinataires">Qui reçoit les données</h2>
+    <ul>
+      <li>L'entreprise cliente de Kleer, propriétaire des données du dossier, et ses Utilisateurs habilités.</li>
+      <li>Les prestataires techniques de Kleer, uniquement pour rendre le service : hébergement, authentification, lecture des pièces d'identité, listes de sanctions et de personnes politiquement exposées, analyse de la presse.</li>
+      <li>Les autorités compétentes, lorsque la loi l'exige.</li>
+    </ul>
+
+    <h2 id="fr-appareil">Votre iPhone</h2>
+    <ul>
+      <li><strong>Appareil photo :</strong> utilisé uniquement pour photographier la pièce d'identité de la Personne Contrôlée. Vous pouvez retirer l'autorisation à tout moment dans les Réglages d'iOS : la saisie manuelle reste alors possible.</li>
+      <li><strong>Localisation, contacts, photothèque :</strong> l'application n'y accède pas.</li>
+      <li><strong>Ce qui reste sur l'appareil :</strong> uniquement votre jeton de connexion, protégé dans le trousseau (Keychain) d'iOS, et effacé à la déconnexion. Les images de pièces sont supprimées après l'envoi, et le rapport PDF téléchargé est supprimé quand vous quittez l'écran de résultat.</li>
+      <li><strong>Pas de suivi :</strong> l'application ne contient aucun outil de publicité ni de mesure d'audience, et ne vous suit pas d'une application à l'autre.</li>
+    </ul>
+
+    <h2 id="fr-droits">Vos droits</h2>
+    <p>Vous pouvez demander l'accès à vos données, leur rectification, leur effacement, la limitation ou l'opposition au traitement, et la portabilité lorsqu'elle s'applique. Kleer répond dans un délai d'un mois.</p>
+    <ul>
+      <li><strong>Utilisateur :</strong> écrivez à Kleer aux adresses ci-dessous. La suppression d'un compte est traitée sous 30 jours. Les comptes sont créés uniquement par Kleer, à la demande de l'entreprise cliente : il n'y a pas d'inscription dans l'application.</li>
+      <li><strong>Personne Contrôlée :</strong> adressez votre demande à l'entreprise qui a réalisé le contrôle, responsable du traitement. Si vous écrivez à Kleer, nous la lui transmettons.</li>
+    </ul>
+
+    <h2 id="fr-contact">Contact et réclamation</h2>
+    <p><strong>Support :</strong> <a href="mailto:support@kleer.ai">support@kleer.ai</a> · <a href="https://kleer-ai.com/contact">kleer-ai.com/contact</a><br>
+    <strong>Délégué à la protection des données (DPO) :</strong> <a href="mailto:larissa.kessel@kleer.ai">larissa.kessel@kleer.ai</a></p>
+    <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL (France) ou l'Autorité de protection des données personnelles de Monaco (APDP) pour les traitements relevant du droit monégasque (loi n° 1.565 du 3 décembre 2024).</p>
+    <p>Cette politique peut évoluer : la version en vigueur est celle publiée sur cette page, avec sa date de mise à jour.</p>
+  </main>
+
+  <!-- ============================== ENGLISH ============================== -->
+  <aside class="toc" lang="en">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#en-who">Who is responsible for what</a></li>
+      <li><a href="#en-data">The data we process</a></li>
+      <li><a href="#en-purposes">Why we use it</a></li>
+      <li><a href="#en-hosting">Hosting and security</a></li>
+      <li><a href="#en-retention">Retention periods</a></li>
+      <li><a href="#en-recipients">Who receives the data</a></li>
+      <li><a href="#en-device">Your iPhone</a></li>
+      <li><a href="#en-rights">Your rights</a></li>
+      <li><a href="#en-contact">Contact and complaints</a></li>
+    </ol>
+  </aside>
+
+  <main lang="en">
+    <h2 id="en-who">Who is responsible for what</h2>
+    <p>The Kleer mobile app is published by <strong>Kleer Technologies SAS</strong>, 33 bis avenue George V, 35800 Dinard (France), RCS Saint-Malo 918 321 787. It lets an employee of a Kleer client company (the "User") verify, from an iPhone, the identity of a person (the "Verified Person") and carry out a first level of due diligence: sanctions, politically exposed persons (PEP) and reputation. This check supports the client company's anti-money laundering and counter-terrorist financing (AML/CFT) obligations.</p>
+    <div class="callout">
+      <p><strong>Verified Person's data:</strong> the Kleer client company is the data controller. Kleer acts as a processor, on its instructions.</p>
+      <p><strong>User account data and the app's technical data:</strong> Kleer is the data controller.</p>
+    </div>
+
+    <h2 id="en-data">The data we process</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>Person concerned</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>E-mail address, display name, account identifier</td><td>User</td><td>Sign-in and account security</td></tr>
+          <tr><td>Last name, first names, date of birth, country of residence</td><td>Verified Person</td><td>Identity check and screening</td></tr>
+          <tr><td>Nationality, sex, document number and expiry date, issuing state, <strong>image of the identity document</strong></td><td>Verified Person</td><td>Document check (reading, authenticity, match with the entered details)</td></tr>
+          <tr><td>Nature and frequency of the relationship with the client</td><td>Verified Person</td><td>Qualifying the case and the level of due diligence</td></tr>
+          <tr><td>Screening results (sanctions, PEP) and reputation analysis (press), qualification statuses and the justification entered by the User</td><td>Verified Person</td><td>Decision support for the client company</td></tr>
+          <tr><td>Device language and technical connection data</td><td>User</td><td>Displaying the right language, running and securing the service</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The app only asks for the data needed for the check. Users must only photograph the identity document of the Verified Person.</p>
+
+    <h2 id="en-purposes">Why we use it</h2>
+    <ul>
+      <li><strong>Verifying identity and carrying out the first level of due diligence.</strong> Legal basis: the client company's legal obligation to prevent money laundering and terrorist financing. Kleer acts on its behalf.</li>
+      <li><strong>Managing accounts, authenticating Users and securing the service.</strong> Legal basis: performance of the contract between Kleer and the client company, and Kleer's legitimate interest in protecting its service.</li>
+      <li><strong>Answering support requests.</strong> Same basis.</li>
+    </ul>
+    <p>Data is neither sold nor used for advertising. Check results are produced partly by automated processing and artificial intelligence: they are a decision aid, and no decision should be taken on the results alone, without human review by the client company.</p>
+
+    <h2 id="en-hosting">Hosting and security</h2>
+    <p>Data is transmitted encrypted, then stored on Kleer's infrastructure hosted in <strong>France</strong> and, for the Monegasque scope, in <strong>Monaco</strong>. The authentication service (Auth0) is hosted in the European Union.</p>
+    <p>If a provider were to process data outside the European Union, the transfer would be covered by the safeguards provided by the GDPR, in particular standard contractual clauses.</p>
+
+    <h2 id="en-retention">Retention periods</h2>
+    <ul>
+      <li><strong>Verified Person's case file:</strong> for the period set by the client company. In principle, 5 years after the end of the business relationship.</li>
+      <li><strong>Case created from the app and then abandoned:</strong> an unfinished case is automatically anonymised after 24 hours.</li>
+      <li><strong>User account:</strong> for the duration of the contract between Kleer and the client company, then deleted or anonymised.</li>
+      <li><strong>On the iPhone:</strong> the app keeps no verification data (see "Your iPhone").</li>
+    </ul>
+
+    <h2 id="en-recipients">Who receives the data</h2>
+    <ul>
+      <li>The Kleer client company, which owns the case data, and its authorised Users.</li>
+      <li>Kleer's technical providers, only to deliver the service: hosting, authentication, identity document reading, sanctions and politically exposed persons lists, press analysis.</li>
+      <li>Competent authorities, where the law requires it.</li>
+    </ul>
+
+    <h2 id="en-device">Your iPhone</h2>
+    <ul>
+      <li><strong>Camera:</strong> used only to photograph the Verified Person's identity document. You can withdraw the permission at any time in iOS Settings: manual entry then remains possible.</li>
+      <li><strong>Location, contacts, photo library:</strong> the app does not access them.</li>
+      <li><strong>What stays on the device:</strong> only your sign-in token, protected in the iOS Keychain and erased when you sign out. Document images are deleted after upload, and the downloaded PDF report is deleted when you leave the result screen.</li>
+      <li><strong>No tracking:</strong> the app contains no advertising or analytics tools and does not track you across apps.</li>
+    </ul>
+
+    <h2 id="en-rights">Your rights</h2>
+    <p>You may request access to your data, its rectification or erasure, restriction of or objection to processing, and portability where it applies. Kleer answers within one month.</p>
+    <ul>
+      <li><strong>Users:</strong> write to Kleer at the addresses below. Account deletion is handled within 30 days. Accounts are created only by Kleer, at the client company's request: there is no sign-up in the app.</li>
+      <li><strong>Verified Persons:</strong> send your request to the company that carried out the check, which is the data controller. If you write to Kleer, we will pass it on.</li>
+    </ul>
+
+    <h2 id="en-contact">Contact and complaints</h2>
+    <p><strong>Support:</strong> <a href="mailto:support@kleer.ai">support@kleer.ai</a> · <a href="https://kleer-ai.com/contact">kleer-ai.com/contact</a><br>
+    <strong>Data Protection Officer (DPO):</strong> <a href="mailto:larissa.kessel@kleer.ai">larissa.kessel@kleer.ai</a></p>
+    <p>If you believe your rights are not being respected, you may lodge a complaint with the CNIL (France) or with the Monegasque Personal Data Protection Authority (APDP) for processing governed by Monegasque law (Law no. 1.565 of 3 December 2024).</p>
+    <p>This policy may change: the version in force is the one published on this page, with its update date.</p>
+  </main>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong>Kleer Technologies SAS</strong>
+      33 bis avenue George V, 35800 Dinard, France<br>
+      RCS Saint-Malo 918 321 787
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <a href="https://kleer-ai.com/contact">kleer-ai.com/contact</a><br>
+      <a href="mailto:support@kleer.ai">support@kleer.ai</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang)); });
+      document.title = lang === 'fr'
+        ? 'Politique de confidentialité | Application mobile Kleer'
+        : 'Privacy policy | Kleer mobile app';
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); }); });
+    var wanted = new URLSearchParams(location.search).get('lang');
+    if (wanted === 'en' || wanted === 'fr') setLang(wanted);
+  })();
+</script>
+</body>
+</html>
